@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bolaji73cdot5"]
+
+[ext_resource type="Script" uid="uid://m56cv0v5rnoc" path="res://vehicle_2d.gd" id="1_4l5f2"]
+[ext_resource type="Texture2D" uid="uid://cdmprxq7xn56y" path="res://icon.svg" id="2_8hhxv"]
+
+[node name="main2d" type="Node2D" unique_id=1743392486]
+
+[node name="Vehicle_2d" type="CharacterBody2D" parent="." unique_id=1855408599]
+script = ExtResource("1_4l5f2")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Vehicle_2d" unique_id=38285916]
+texture = ExtResource("2_8hhxv")
+metadata/_edit_lock_ = true

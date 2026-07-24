@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://ckdudorgd8hic"]
+
+[ext_resource type="Script" uid="uid://b3638a86e1ti8" path="res://vehicule_rigid.gd" id="1_n22wj"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ig7tw"]
+size = Vector3(1, 1, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0xm2m"]
+size = Vector3(1, 1.9956055, 0.93252563)
+
+[node name="Micro_rigid" type="RigidBody3D" unique_id=1890880734]
+rotation_edit_mode = 2
+axis_lock_angular_z = true
+gravity_scale = 0.0
+script = ExtResource("1_n22wj")
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=183002866]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44546998, 0)
+mesh = SubResource("BoxMesh_ig7tw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=209567575]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.4731903, 2.0683807e-08)
+shape = SubResource("BoxShape3D_0xm2m")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1573463185]
+transform = Transform3D(1, 0, 0, 0, 0.7565729, 0.6539093, 0, -0.6539093, 0.7565729, 0, 2.2333174, 3.1391962)
+current = true
