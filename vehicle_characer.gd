@@ -40,8 +40,7 @@ func _physics_process(delta):
 		var steer_rad = stearig_angle * turn
 		var reverse_multipler = 1.0 if speed_factor < 0.0 else -1.0
 		rotate_y(steer_rad * (speed_factor / max_speed) * reverse_multipler * delta * 3.0)
-	
-	
+		
 	move_and_slide()
 	
 	position.y = max(position.y, floor_limit)
