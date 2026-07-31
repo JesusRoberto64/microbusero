@@ -1,25 +1,25 @@
 extends ProgressBar
 
-@export var hp : float = 4
-var hp_blocs : int = 4
-var unit_hit
+@export var hp : float = 100.0
+@export var hp_blocs : int = 4
+var unit_hit : float
 
 func _ready() -> void:
-	unit_hit = size.x / hp
-	hp_blocs = float(hp - 1)
-	var seperator = $VSeparator
+	value = hp
+	unit_hit = max_value / hp_blocs
 	
-	for i in hp_blocs-1:
+	var seperator = $VSeparator
+	for i in hp_blocs-2:
 		var inst = seperator.duplicate()
 		add_child(inst)
 	
-	var step_length = unit_hit
+	var step_length = size.x / hp_blocs
 	for y in get_children():
 		y.position.x += step_length 
-		step_length += unit_hit
+		step_length += size.x / hp_blocs
 
 func hurt(hit : float = unit_hit):
 	hp -= hit
-	value -= max_value / hp_blocs
+	value = hp
 	if hp <= 0.0:
 		get_tree().call_deferred("reload_current_scene")

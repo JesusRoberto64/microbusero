@@ -9,6 +9,10 @@ var gravity = 9.8
 
 var floor_limit = 0.5
 
+@onready var anim = $AnimationPlayer
+signal hited
+var is_hurt = false
+
 func _ready():
 	stearig_angle = deg_to_rad(stearig_angle)
 
@@ -43,5 +47,16 @@ func _physics_process(delta):
 		
 	move_and_slide()
 	
+	if is_on_wall() and not is_hurt:
+		hited.emit()
+		is_hurt = true
+	
 	position.y = max(position.y, floor_limit)
 	pass
+
+func recover():
+	anim.play("RESET")
+	is_hurt = false
+
+func hurt():
+	anim.play("hurt")

@@ -11,13 +11,19 @@ var timer_limit = 1.5
 
 var curve: Curve3D
 
+signal recover_micro
+
 func _ready():
 	curve = route.curve
+	microbus.hited.connect(hurt_micro)
+	recover_micro.connect(microbus.recover)
 
 func _process(delta):
 	if timer > 0.0:
 		timer -= delta
-		if timer < 0.0: timer = 0.0
+		if timer < 0.0: 
+			timer = 0.0
+			recover_micro.emit()
 	elif timer == 0.0:
 		var route_point = curve.get_closest_point(microbus.position)
 		
@@ -25,9 +31,9 @@ func _process(delta):
 		var distance_to_route = abs(diff_points.length())
 		
 		if distance_to_route > 5.0:
-			live_bar.hurt(1.0)
+			live_bar.hurt()
+			microbus.hurt()
 			timer = timer_limit
-		
 	
 	# Movimiento de ruta
 	var micro_offset = curve.get_closest_offset(microbus.position)
@@ -40,3 +46,8 @@ func _process(delta):
 	elif micro_offset <= path_backward.progress - vision_offset:
 		path_backward.progress = micro_offset - vision_step
 		path_forward.progress = path_backward.progress + (vision_offset + vision_step)
+
+func hurt_micro():
+	microbus.hurt()
+	live_bar.hurt()
+	timer = timer_limit
