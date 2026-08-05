@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://dpj21kq58v6t0"]
 
-[ext_resource type="Script" uid="uid://5jk7q61qaqt1" path="res://vehicle_characer.gd" id="1_0xm2m"]
-[ext_resource type="Script" uid="uid://brt17kevvin0u" path="res://overlord.gd" id="1_h2yge"]
-[ext_resource type="Texture2D" uid="uid://boo6duhfgb23q" path="res://SCREEN_320x180.png" id="1_ig7tw"]
-[ext_resource type="Texture2D" uid="uid://dnlsbl7x25j1e" path="res://flecha.png" id="4_1bvp3"]
-[ext_resource type="Script" uid="uid://jssd0dfk8ovh" path="res://live_bar.gd" id="5_lquwl"]
+[ext_resource type="Script" uid="uid://brt17kevvin0u" path="res://Logica/overlord.gd" id="1_2ia52"]
+[ext_resource type="Script" uid="uid://5jk7q61qaqt1" path="res://Logica/vehicle_characer.gd" id="2_crgrh"]
+[ext_resource type="Texture2D" uid="uid://boo6duhfgb23q" path="res://Arte/SCREEN_320x180.png" id="3_s2ilj"]
+[ext_resource type="Texture2D" uid="uid://dnlsbl7x25j1e" path="res://Arte/flecha.png" id="4_ktoa8"]
+[ext_resource type="Script" uid="uid://jssd0dfk8ovh" path="res://Logica/live_bar.gd" id="5_1md0r"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_ig7tw"]
 size = Vector3(1, 1, 2)
@@ -62,7 +62,7 @@ subdivide_width = 6
 subdivide_depth = 6
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h2yge"]
-albedo_texture = ExtResource("1_ig7tw")
+albedo_texture = ExtResource("3_s2ilj")
 uv1_scale = Vector3(0.5, 0.5, 0.5)
 uv1_world_triplanar = true
 texture_filter = 0
@@ -91,12 +91,12 @@ thickness = 20
 sections = 2
 
 [node name="main" type="Node3D" unique_id=648834526]
-script = ExtResource("1_h2yge")
+script = ExtResource("1_2ia52")
 
 [node name="Micro_characer" type="CharacterBody3D" parent="." unique_id=1533093993]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.104274884, 0.74925613, -1.1351112)
 rotation_edit_mode = 2
-script = ExtResource("1_0xm2m")
+script = ExtResource("2_crgrh")
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Micro_characer" unique_id=997286732]
@@ -284,7 +284,7 @@ loop = false
 [node name="Decal" type="Decal" parent="Ruta/PathFroward" unique_id=1879056256]
 transform = Transform3D(0.99921703, 0, -0.03956643, 0, 1, 0, 0.03956643, 0, 0.99921703, -0.21682906, 0.0110087395, 1.8314981)
 size = Vector3(5.0918884, 8.193237, 6.078125)
-texture_albedo = ExtResource("4_1bvp3")
+texture_albedo = ExtResource("4_ktoa8")
 distance_fade_enabled = true
 distance_fade_begin = 20.0
 distance_fade_length = 5.0
@@ -297,7 +297,7 @@ loop = false
 [node name="Decal" type="Decal" parent="Ruta/PathBackward" unique_id=1379013817]
 transform = Transform3D(0.99921703, 0, -0.03956643, 0, 1, 0, 0.03956643, 0, 0.99921703, -0.21682906, 0.0110087395, 1.8314981)
 size = Vector3(5.0918884, 8.193237, 6.078125)
-texture_albedo = ExtResource("4_1bvp3")
+texture_albedo = ExtResource("4_ktoa8")
 distance_fade_enabled = true
 distance_fade_begin = 20.0
 distance_fade_length = 5.0
@@ -318,7 +318,8 @@ offset_bottom = -22.0
 grow_horizontal = 0
 grow_vertical = 0
 show_percentage = false
-script = ExtResource("5_lquwl")
+script = ExtResource("5_1md0r")
+hp_blocs = 8
 
 [node name="VSeparator" type="VSeparator" parent="CanvasLayer/LiveBar" unique_id=208214671]
 layout_mode = 1

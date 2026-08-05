@@ -52,7 +52,6 @@ func _physics_process(delta):
 		is_hurt = true
 	
 	position.y = max(position.y, floor_limit)
-	pass
 
 func recover():
 	anim.play("RESET")

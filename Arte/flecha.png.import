@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dnlsbl7x25j1e"
-path.s3tc="res://.godot/imported/flecha.png-9ae21a305c7166c55b0e1494838e52f9.s3tc.ctex"
+path.s3tc="res://.godot/imported/flecha.png-78c18e704e47f4d5212e5c3d23864b7a.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://flecha.png"
-dest_files=["res://.godot/imported/flecha.png-9ae21a305c7166c55b0e1494838e52f9.s3tc.ctex"]
+source_file="res://Arte/flecha.png"
+dest_files=["res://.godot/imported/flecha.png-78c18e704e47f4d5212e5c3d23864b7a.s3tc.ctex"]
 
 [params]
 

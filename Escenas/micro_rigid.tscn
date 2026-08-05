@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ckdudorgd8hic"]
 
-[ext_resource type="Script" uid="uid://b3638a86e1ti8" path="res://vehicule_rigid.gd" id="1_n22wj"]
+[ext_resource type="Script" uid="uid://b3638a86e1ti8" path="res://Logica/vehicule_rigid.gd" id="1_n22wj"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_ig7tw"]
 size = Vector3(1, 1, 2)

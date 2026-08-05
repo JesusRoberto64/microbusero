@@ -18,7 +18,12 @@ func _ready():
 	microbus.hited.connect(hurt_micro)
 	recover_micro.connect(microbus.recover)
 
-func _process(delta):
+func _process(_delta):
+	#penalty_acctions(_delta)
+	#route_move_sign()
+	pass
+
+func penalty_acctions(delta):
 	if timer > 0.0:
 		timer -= delta
 		if timer < 0.0: 
@@ -34,7 +39,8 @@ func _process(delta):
 			live_bar.hurt()
 			microbus.hurt()
 			timer = timer_limit
-	
+
+func route_move_sign():
 	# Movimiento de ruta
 	var micro_offset = curve.get_closest_offset(microbus.position)
 	var vision_offset = 5.0
