@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://dsvxbom5mckqf"]
+
+[ext_resource type="Script" uid="uid://5jk7q61qaqt1" path="res://Logica/vehicle_characer.gd" id="1_5xfmy"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ig7tw"]
+size = Vector3(1, 1, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0xm2m"]
+size = Vector3(1, 1, 1.975647)
+
+[sub_resource type="Animation" id="Animation_lquwl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_7mycd"]
+resource_name = "hurt"
+length = 0.33333334
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.26666668),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_272bh"]
+_data = {
+&"RESET": SubResource("Animation_lquwl"),
+&"hurt": SubResource("Animation_7mycd")
+}
+
+[node name="Micro_characer" type="CharacterBody3D" unique_id=540502499]
+rotation_edit_mode = 2
+script = ExtResource("1_5xfmy")
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=34716210]
+layers = 2
+mesh = SubResource("BoxMesh_ig7tw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2114973014]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.007232666)
+shape = SubResource("BoxShape3D_0xm2m")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1957736999]
+transform = Transform3D(1, 0, 0, 0, 0.7506648, 0.66068316, 0, -0.66068316, 0.7506648, 0, 2.515326, 3.7870889)
+current = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1056348976]
+libraries/ = SubResource("AnimationLibrary_272bh")

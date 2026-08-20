@@ -41,9 +41,8 @@ func _physics_process(delta):
 	# Rotacion
 	var speed_factor = forward_vel.dot(forward_dir)
 	if abs(speed_factor) > 0.1:
-		var steer_rad = stearig_angle * turn
-		var reverse_multipler = 1.0 if speed_factor < 0.0 else -1.0
-		rotate_y(steer_rad * (speed_factor / max_speed) * reverse_multipler * delta * 3.0)
+		var steer_rad = stearig_angle * -turn
+		rotate_y(steer_rad * (speed_factor / max_speed)  * delta * 3.0)
 		
 	move_and_slide()
 	

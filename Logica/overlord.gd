@@ -20,7 +20,7 @@ func _ready():
 
 func _process(_delta):
 	#penalty_acctions(_delta)
-	#route_move_sign()
+	route_move_sign()
 	pass
 
 func penalty_acctions(delta):
