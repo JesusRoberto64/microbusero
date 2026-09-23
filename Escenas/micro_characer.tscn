@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://dsvxbom5mckqf"]
 
 [ext_resource type="Script" uid="uid://5jk7q61qaqt1" path="res://Logica/vehicle_characer.gd" id="1_5xfmy"]
+[ext_resource type="Script" uid="uid://tfs1u8qn6jj6" path="res://Logica/ancher_camera.gd" id="2_q6o7v"]
+[ext_resource type="Script" uid="uid://idnpthf5ixok" path="res://Logica/follow_camera.gd" id="3_0ahhu"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_ig7tw"]
 size = Vector3(1, 1, 2)
@@ -59,9 +61,25 @@ mesh = SubResource("BoxMesh_ig7tw")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.007232666)
 shape = SubResource("BoxShape3D_0xm2m")
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=1957736999]
-transform = Transform3D(1, 0, 0, 0, 0.7506648, 0.66068316, 0, -0.66068316, 0.7506648, 0, 2.515326, 3.7870889)
+[node name="Ancher_camera" type="Node" parent="." unique_id=638767464 node_paths=PackedStringArray("ancher_point")]
+script = ExtResource("2_q6o7v")
+ancher_point = NodePath("../ancher_point")
+
+[node name="Camera3D" type="Camera3D" parent="Ancher_camera" unique_id=1957736999]
+transform = Transform3D(1, 0, 0, 0, 0.7506649, 0.6606832, 0, -0.6606832, 0.7506649, 0, 2.515326, 3.7870889)
+
+[node name="follow_camera" type="Camera3D" parent="." unique_id=1175851137 node_paths=PackedStringArray("ancher_point", "limit_cam")]
+transform = Transform3D(1, -2.2633542e-09, -1.8422679e-09, 2.9167166e-09, 0.7540565, 0.6568095, -9.742119e-11, -0.6568095, 0.7540565, -2.7271319e-10, 2.6176941, 3.5412905)
 current = true
+script = ExtResource("3_0ahhu")
+ancher_point = NodePath("../ancher_point")
+limit_cam = NodePath("../Limit_cam")
+
+[node name="ancher_point" type="Marker3D" parent="." unique_id=1201160520]
+transform = Transform3D(1, 0, 0, 0, 0.75066483, 0.6606832, 0, -0.6606832, 0.75066483, 0, 2.233015, 3.4663286)
+
+[node name="Limit_cam" type="Marker3D" parent="." unique_id=898065450]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5158587, 3.7860882)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1056348976]
 libraries/ = SubResource("AnimationLibrary_272bh")

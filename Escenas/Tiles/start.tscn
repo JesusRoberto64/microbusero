@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://b2bk85iem8ehv"]
+
+[ext_resource type="Texture2D" uid="uid://db0rmgy0ju3wm" path="res://Arte/tileset_road_00_0001.png" id="1_qdos2"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_s0pd7"]
+size = Vector3(1.25, 0.3, 30)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_r1j2m"]
+data = PackedVector3Array(-0.625, 0.14999999, 15, 0.625, 0.14999999, 15, -0.625, -0.14999999, 15, 0.625, 0.14999999, 15, 0.625, -0.14999999, 15, -0.625, -0.14999999, 15, 0.625, 0.14999999, -15, -0.625, 0.14999999, -15, 0.625, -0.14999999, -15, -0.625, 0.14999999, -15, -0.625, -0.14999999, -15, 0.625, -0.14999999, -15, 0.625, 0.14999999, 15, 0.625, 0.14999999, -15, 0.625, -0.14999999, 15, 0.625, 0.14999999, -15, 0.625, -0.14999999, -15, 0.625, -0.14999999, 15, -0.625, 0.14999999, -15, -0.625, 0.14999999, 15, -0.625, -0.14999999, -15, -0.625, 0.14999999, 15, -0.625, -0.14999999, 15, -0.625, -0.14999999, -15, 0.625, 0.14999999, 15, -0.625, 0.14999999, 15, 0.625, 0.14999999, -15, -0.625, 0.14999999, 15, -0.625, 0.14999999, -15, 0.625, 0.14999999, -15, -0.625, -0.14999999, 15, 0.625, -0.14999999, 15, -0.625, -0.14999999, -15, 0.625, -0.14999999, 15, 0.625, -0.14999999, -15, -0.625, -0.14999999, -15)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qdos2"]
+albedo_texture = ExtResource("1_qdos2")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_dtppb"]
+material = SubResource("StandardMaterial3D_qdos2")
+size = Vector2(14, 30)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_usu3w"]
+data = PackedVector3Array(7, 0, 15, -7, 0, 15, 7, 0, -15, -7, 0, 15, -7, 0, -15, 7, 0, -15)
+
+[sub_resource type="BoxMesh" id="BoxMesh_qdos2"]
+size = Vector3(15.7, 4.5, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s0pd7"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0.7137255)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pcxga"]
+size = Vector3(15.672913, 4.6678467, 2.513916)
+
+[node name="START" type="Node3D" unique_id=1629145725]
+
+[node name="Borde4" type="MeshInstance3D" parent="." unique_id=598020169]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6842028, -0.09954035, -15)
+mesh = SubResource("BoxMesh_s0pd7")
+metadata/_edit_group_ = true
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Borde4" unique_id=737076896]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Borde4/StaticBody3D" unique_id=1130226654]
+shape = SubResource("ConcavePolygonShape3D_r1j2m")
+
+[node name="Borde5" type="MeshInstance3D" parent="." unique_id=592269764]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.409762, -0.09954035, -15)
+mesh = SubResource("BoxMesh_s0pd7")
+metadata/_edit_group_ = true
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Borde5" unique_id=1384124256]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Borde5/StaticBody3D" unique_id=572873182]
+shape = SubResource("ConcavePolygonShape3D_r1j2m")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=831651913]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -15)
+mesh = SubResource("PlaneMesh_dtppb")
+metadata/_edit_group_ = true
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=1874313917]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=1953204483]
+shape = SubResource("ConcavePolygonShape3D_usu3w")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1781684407]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.384033, 1.7740796, 1.1961145)
+mesh = SubResource("BoxMesh_qdos2")
+surface_material_override/0 = SubResource("StandardMaterial3D_s0pd7")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=157430310]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1182717230]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.3364563, 1.8339233, 1.243042)
+shape = SubResource("BoxShape3D_pcxga")

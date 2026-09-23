@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dfdfjp5djf7o"]
 
-[ext_resource type="Texture2D" uid="uid://b7fan2bh8m1bm" path="res://Arte/ground_asphalt.png" id="1_gs6rb"]
+[ext_resource type="Texture2D" uid="uid://b7fan2bh8m1bm" path="res://Arte/ground_asphalt_00.png" id="1_gs6rb"]
 [ext_resource type="Script" uid="uid://b3ns4wdqoktu3" path="res://Logica/car_traffic.gd" id="2_281lp"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_281lp"]
@@ -171,7 +171,7 @@ curve = SubResource("Curve3D_wt8w1")
 metadata/_edit_lock_ = true
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D2" unique_id=1194165362]
-transform = Transform3D(0.9999978, 0, -0.0017497243, 0, 1, 0, 0.0017497243, 0, 0.9999978, 0.8666258, 0, 0.025511304)
+transform = Transform3D(0.9999976, 0, -0.0017497239, 0, 1, 0, 0.0017497239, 0, 0.9999976, 0.8666258, 0, 0.025511304)
 loop = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Path3D2/PathFollow3D" unique_id=1243361342]

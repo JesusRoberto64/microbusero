@@ -5,6 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://boo6duhfgb23q" path="res://Arte/SCREEN_320x180.png" id="3_s2ilj"]
 [ext_resource type="Texture2D" uid="uid://dnlsbl7x25j1e" path="res://Arte/flecha.png" id="4_ktoa8"]
 [ext_resource type="Script" uid="uid://jssd0dfk8ovh" path="res://Logica/live_bar.gd" id="5_1md0r"]
+[ext_resource type="PackedScene" uid="uid://gwc71hdrnl3h" path="res://Escenas/tiles_test.tscn" id="6_crgrh"]
+[ext_resource type="Script" uid="uid://cd18retof0x" path="res://Logica/tile_builder.gd" id="6_s2ilj"]
 
 [sub_resource type="PrismMesh" id="PrismMesh_0xm2m"]
 size = Vector3(6, 1, 9)
@@ -50,7 +52,7 @@ sections = 2
 script = ExtResource("1_2ia52")
 
 [node name="Micro_characer" parent="." unique_id=540502499 instance=ExtResource("2_2ia52")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.104274884, 0.74925613, -1.1351112)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.104275, 0.74925613, -4.1351113)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1513205522]
 transform = Transform3D(1, 0, 0, 0, 0.79043305, 0.6125484, 0, -0.6125484, 0.79043305, 0, 7.1999273, 0)
@@ -59,6 +61,7 @@ transform = Transform3D(1, 0, 0, 0, 0.79043305, 0.6125484, 0, -0.6125484, 0.7904
 transform = Transform3D(0.055246413, 0, -0.99847275, 0, 1, 0, 0.99847275, 0, 0.055246413, -13.512085, 2, -2.2372036)
 
 [node name="Terreno" type="Node3D" parent="." unique_id=418786867]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -203, 0, 0)
 
 [node name="prims" type="MeshInstance3D" parent="Terreno" unique_id=1105296606]
 transform = Transform3D(-0.0011518896, 0, -0.99999934, 0, 1, 0, 0.99999934, 0, -0.0011518896, 11.321748, 0.5057453, -11.812878)
@@ -170,6 +173,7 @@ metadata/_edit_group_ = true
 shape = SubResource("ConcavePolygonShape3D_0xm2m")
 
 [node name="Edificios" type="Node3D" parent="." unique_id=1547952820]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -203, 0, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Edificios" unique_id=1219502011]
 transform = Transform3D(0.9439681, 0, 0.33003664, 0, 1, 0, -0.33003664, 0, 0.9439681, -1.2230091, 2.4720764, -32.56107)
@@ -271,3 +275,8 @@ theme_override_styles/separator = SubResource("StyleBoxLine_lquwl")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 14.52519, 0)
 rotation_edit_mode = 2
 mesh = SubResource("RibbonTrailMesh_lquwl")
+
+[node name="Tile_builder" type="Node3D" parent="." unique_id=600740115]
+script = ExtResource("6_s2ilj")
+
+[node name="tiles_test" parent="Tile_builder" unique_id=1274433896 instance=ExtResource("6_crgrh")]
