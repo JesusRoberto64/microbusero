@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://5jk7q61qaqt1" path="res://Logica/vehicle_characer.gd" id="1_5xfmy"]
 [ext_resource type="Script" uid="uid://tfs1u8qn6jj6" path="res://Logica/ancher_camera.gd" id="2_q6o7v"]
 [ext_resource type="Script" uid="uid://idnpthf5ixok" path="res://Logica/follow_camera.gd" id="3_0ahhu"]
+[ext_resource type="Script" uid="uid://jssd0dfk8ovh" path="res://Logica/live_bar.gd" id="4_1jpkv"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_ig7tw"]
 size = Vector3(1, 1, 2)
@@ -48,6 +49,10 @@ _data = {
 &"hurt": SubResource("Animation_7mycd")
 }
 
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_qbakc"]
+grow_begin = 2.0
+thickness = 20
+
 [node name="Micro_characer" type="CharacterBody3D" unique_id=540502499]
 rotation_edit_mode = 2
 script = ExtResource("1_5xfmy")
@@ -67,10 +72,11 @@ ancher_point = NodePath("../ancher_point")
 
 [node name="Camera3D" type="Camera3D" parent="Ancher_camera" unique_id=1957736999]
 transform = Transform3D(1, 0, 0, 0, 0.7506649, 0.6606832, 0, -0.6606832, 0.7506649, 0, 2.515326, 3.7870889)
+current = true
 
 [node name="follow_camera" type="Camera3D" parent="." unique_id=1175851137 node_paths=PackedStringArray("ancher_point", "limit_cam")]
-transform = Transform3D(1, -2.2633542e-09, -1.8422679e-09, 2.9167166e-09, 0.7540565, 0.6568095, -9.742119e-11, -0.6568095, 0.7540565, -2.7271319e-10, 2.6176941, 3.5412905)
-current = true
+transform = Transform3D(1, -2.2633564e-09, -1.842266e-09, 2.9167166e-09, 0.7540565, 0.6568095, -9.742119e-11, -0.6568095, 0.7540565, -2.7271319e-10, 2.6176941, 3.5412905)
+rotation_edit_mode = 2
 script = ExtResource("3_0ahhu")
 ancher_point = NodePath("../ancher_point")
 limit_cam = NodePath("../Limit_cam")
@@ -83,3 +89,28 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5158587, 3.7860882)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1056348976]
 libraries/ = SubResource("AnimationLibrary_272bh")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1537804546]
+
+[node name="LiveBar" type="ProgressBar" parent="CanvasLayer" unique_id=823656603]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -224.0
+offset_top = -42.0
+offset_right = -24.0
+offset_bottom = -22.0
+grow_horizontal = 0
+grow_vertical = 0
+show_percentage = false
+script = ExtResource("4_1jpkv")
+
+[node name="VSeparator" type="VSeparator" parent="CanvasLayer/LiveBar" unique_id=360354939]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 4.0
+grow_vertical = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_qbakc")

@@ -1,8 +1,7 @@
 extends CharacterBody3D
 
-var engine_power = 20.0
-var max_speed = 10.0
-var stearig_angle = 20.0
+var engine_power = 10.0 # 18.0
+var stearig_angle = 60.0 # 12.0
 var drag = 1.0
 var tire_grip = 8.0
 var gravity = 9.8
@@ -14,6 +13,7 @@ signal hited
 var is_hurt = false
 
 var turn_curve = 0.0
+var turn_direction = 1.0
 
 var timer = 1.0
 var timer_limit = 1.0 
@@ -24,15 +24,20 @@ func _ready():
 func _physics_process(delta):
 	velocity.y -= gravity
 	
-	var march = Input.get_axis("ui_down", "ui_up") 
-	var turn = Input.get_axis("ui_left", "ui_right")
+	var march = Input.get_axis("break", "accel") 
 	
-	var forward_dir = -transform.basis.z
-	var side_dir = transform.basis.x
+	var last_turn_direction = turn_direction
+	var turn = Input.get_axis("ui_left", "ui_right")
+	turn_direction = turn if turn != 0.0 else turn_direction
+	
+	var forward_dir : Vector3 = -transform.basis.z
+	var side_dir : Vector3 = transform.basis.x
 	
 	var accel = Vector3.ZERO
 	if march != 0.0:
 		accel = forward_dir * engine_power * march
+	
+	#print(accel)  
 	
 	var forward_vel = forward_dir * velocity.dot(forward_dir)
 	var lateral_vel = side_dir * velocity.dot(side_dir)
@@ -45,20 +50,29 @@ func _physics_process(delta):
 	
 	# Rotacion =======
 	
-	
 	var speed_factor = forward_vel.dot(forward_dir)
-	if abs(speed_factor) > 0.1:
+	if abs(speed_factor) > 0.85:
 		var steer_rad = stearig_angle * -turn
 		
 		# Delay de giro, emula el tiempo que se tarda en girar y da precicion.
 		if turn != 0.0:
-			turn_curve += delta * 2.0
-			turn_curve = min(turn_curve, 1.0)
+			#if last_turn_direction == turn_direction:
+				#turn_curve += delta 
+				#turn_curve = min(turn_curve, 1.0)
+			#else:
+				#turn_curve = 0.0
+			turn_curve += delta * 1.25
+			turn_curve = min(turn_curve, 500.0)
 		else:
 			turn_curve = lerp(turn_curve, 0.0, delta)
-		steer_rad *= ease(turn_curve, 3.0) #turn_curve
 		
-		rotate_y(steer_rad * (speed_factor / max_speed)  * delta * 3.0)
+		steer_rad *= ease(turn_curve, 0.2)
+		rotate_y(steer_rad  * delta )
+	
+	if Input.is_key_pressed(KEY_ESCAPE):
+		velocity = Vector3.ZERO
+		
+		pass
 		
 	move_and_slide()
 	
@@ -78,5 +92,6 @@ func recover():
 
 func hurt():
 	#hited.emit()
+	$CanvasLayer/LiveBar.hurt()
 	anim.play("hurt")
 	is_hurt = true

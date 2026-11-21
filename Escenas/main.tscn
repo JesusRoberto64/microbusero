@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dpj21kq58v6t0"]
+[gd_scene format=4 uid="uid://dpj21kq58v6t0"]
 
 [ext_resource type="Script" uid="uid://brt17kevvin0u" path="res://Logica/overlord.gd" id="1_2ia52"]
 [ext_resource type="PackedScene" uid="uid://dsvxbom5mckqf" path="res://Escenas/micro_characer.tscn" id="2_2ia52"]
@@ -44,9 +44,6 @@ point_count = 3
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_lquwl"]
 grow_begin = 2.0
 thickness = 20
-
-[sub_resource type="RibbonTrailMesh" id="RibbonTrailMesh_lquwl"]
-sections = 2
 
 [node name="main" type="Node3D" unique_id=648834526]
 script = ExtResource("1_2ia52")
@@ -248,6 +245,7 @@ cull_mask = 1048573
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=486553568]
 
 [node name="LiveBar" type="ProgressBar" parent="CanvasLayer" unique_id=1156935773]
+visible = false
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
@@ -271,12 +269,8 @@ offset_right = 4.0
 grow_vertical = 2
 theme_override_styles/separator = SubResource("StyleBoxLine_lquwl")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2115300616]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 14.52519, 0)
-rotation_edit_mode = 2
-mesh = SubResource("RibbonTrailMesh_lquwl")
-
 [node name="Tile_builder" type="Node3D" parent="." unique_id=600740115]
 script = ExtResource("6_s2ilj")
 
 [node name="tiles_test" parent="Tile_builder" unique_id=1274433896 instance=ExtResource("6_crgrh")]
+tile_map_data = PackedByteArray("AAAAAPX/AQAAAAAAAAAAAPb/AQAAAAAAAAAAAPf/AQAAAAAAAAAAAPj/AQAAAAAAAAAAAPn/AQAAAAAAAAAAAPr/AQAAAAAAAAAAAPT/AQAAAAAAAAAAAPv/AQAAAAAAAAAAAPP/AQAAAAAAAAAAAPL/AQAAAAAAAAAAAPH/AQAAAAAAAAAAAPD/AQAAAAAAAAAAAO//AQAAAAAAAAAAAO7/AQAAAAAAAAAAAO3/AQAAAAAAAAAAAOz/AQAAAAAAAAAAAOv/AQAAAAAAAAAAAOr/AQAAAAAAAAABAOr/AAABAAAAAAABAOn/AAABAAAAAAACAOn/AAABAAAAAAACAOr/AAABAAAAAAADAOr/AAABAAAAAAAAAOn/AAAFAAAAAAADAOv/AAABAAAAAAACAOv/AAABAAAAAAABAOv/AAABAAAAAAAAAP//AAAAAAAAAAAAAP7/AQAAAAAAAAAAAP3/AQAAAAAAAAAAAPz/AQAAAAAAAAA=")

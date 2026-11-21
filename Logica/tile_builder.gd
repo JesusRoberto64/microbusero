@@ -11,6 +11,7 @@ var TILES : Dictionary = {
 	"road_01" : preload("res://Escenas/Tiles/road_01.tscn"),
 	"road_02" : preload("res://Escenas/Tiles/road_02.tscn"),
 	"road_03" : preload("res://Escenas/Tiles/road_03.tscn"),
+	"road_04" : preload("res://Escenas/Tiles/road_04.tscn"),
 	"finish" : preload("res://Escenas/Tiles/finish.tscn")
 }
 

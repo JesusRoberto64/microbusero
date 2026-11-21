@@ -10,9 +10,10 @@ func _ready():
 	Microbus = get_parent()
 
 func _physics_process(delta):
-	#var trans = camera.global_transform.interpolate_with(ancher_point.global_transform, delta* 12.5)
-	#camera.global_transform = trans
-	
+	var norm = camera.global_transform.orthonormalized()
+	var trans = norm.interpolate_with(ancher_point.global_transform, delta* 12.5)
+	camera.global_transform = trans
+	#
 	
 	
 	pass

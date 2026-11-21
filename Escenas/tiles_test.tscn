@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dslvt2tfpseix" path="res://Arte/tileset__mini_00.png.png" id="1_dl7jb"]
 [ext_resource type="Script" uid="uid://dekqy4tlxibge" path="res://Logica/tiles_manager.gd" id="2_i7ms8"]
+[ext_resource type="Texture2D" uid="uid://d16ns2yg0jr6n" path="res://Arte/road_min_00.png" id="2_muy7w"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_i7ms8"]
 tile_data = PackedInt32Array(0, 131072, 0, 65536, 65536, 0, 131072, 65536, 0, 196608, 65536, 0, 262144, 0, 0)
@@ -22,14 +23,21 @@ texture_region_size = Vector2i(16, 35)
 5:0/0 = 0
 5:0/0/custom_data_0 = "finish"
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tfjme"]
+texture = ExtResource("2_muy7w")
+texture_region_size = Vector2i(16, 35)
+0:0/0 = 0
+0:0/0/custom_data_0 = "road_04"
+
 [sub_resource type="TileSet" id="TileSet_muy7w"]
 tile_size = Vector2i(16, 35)
 custom_data_layer_0/name = "name"
 custom_data_layer_0/type = 4
 sources/0 = SubResource("TileSetAtlasSource_i7ms8")
+sources/1 = SubResource("TileSetAtlasSource_tfjme")
 pattern_0 = SubResource("TileMapPattern_i7ms8")
 
 [node name="tiles_test" type="TileMapLayer" unique_id=1274433896]
-tile_map_data = PackedByteArray("AAAAAPX/AAABAAAAAAAAAPb/AAABAAAAAAAAAPf/AAAEAAAAAAAAAPj/AAADAAAAAAAAAPn/AAADAAAAAAAAAPr/AAADAAAAAAAAAPT/AAABAAAAAAAAAPv/AAACAAAAAAAAAPz/AAABAAAAAAAAAP3/AAABAAAAAAAAAP7/AAABAAAAAAAAAP//AAAAAAAAAAAAAPP/AAABAAAAAAAAAPL/AAABAAAAAAAAAPH/AAABAAAAAAAAAPD/AAABAAAAAAAAAO//AAABAAAAAAAAAO7/AAABAAAAAAAAAO3/AAABAAAAAAAAAOz/AAABAAAAAAAAAOv/AAABAAAAAAAAAOr/AAABAAAAAAABAOr/AAABAAAAAAABAOn/AAABAAAAAAACAOn/AAABAAAAAAACAOr/AAABAAAAAAADAOr/AAABAAAAAAAAAOn/AAAFAAAAAAA=")
+tile_map_data = PackedByteArray("AAAAAPX/AAABAAAAAAAAAPb/AAABAAAAAAAAAPf/AAAEAAAAAAAAAPj/AAADAAAAAAAAAPn/AAADAAAAAAAAAPr/AAADAAAAAAAAAPT/AAABAAAAAAAAAPv/AAACAAAAAAAAAPP/AAABAAAAAAAAAPL/AAABAAAAAAAAAPH/AAABAAAAAAAAAPD/AAABAAAAAAAAAO//AAABAAAAAAAAAO7/AAABAAAAAAAAAO3/AAABAAAAAAAAAOz/AAABAAAAAAAAAOv/AAABAAAAAAAAAOr/AAABAAAAAAABAOr/AAABAAAAAAABAOn/AAABAAAAAAACAOn/AAABAAAAAAACAOr/AAABAAAAAAADAOr/AAABAAAAAAAAAOn/AAAFAAAAAAADAOv/AAABAAAAAAACAOv/AAABAAAAAAABAOv/AAABAAAAAAAAAP//AAAAAAAAAAAAAP7/AQAAAAAAAAAAAP3/AAABAAAAAAAAAPz/AAABAAAAAAA=")
 tile_set = SubResource("TileSet_muy7w")
 script = ExtResource("2_i7ms8")
