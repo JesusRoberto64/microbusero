@@ -25,10 +25,7 @@ func _physics_process(delta):
 	velocity.y -= gravity
 	
 	var march = Input.get_axis("break", "accel") 
-	
-	var last_turn_direction = turn_direction
 	var turn = Input.get_axis("ui_left", "ui_right")
-	turn_direction = turn if turn != 0.0 else turn_direction
 	
 	var forward_dir : Vector3 = -transform.basis.z
 	var side_dir : Vector3 = transform.basis.x
@@ -36,8 +33,8 @@ func _physics_process(delta):
 	var accel = Vector3.ZERO
 	if march != 0.0:
 		accel = forward_dir * engine_power * march
-	
-	#print(accel)  
+		# De reversa
+		if march == -1.0: accel *= 0.3
 	
 	var forward_vel = forward_dir * velocity.dot(forward_dir)
 	var lateral_vel = side_dir * velocity.dot(side_dir)
@@ -49,35 +46,33 @@ func _physics_process(delta):
 	velocity = forward_vel + lateral_vel + (accel * delta)
 	
 	# Rotacion =======
-	
 	var speed_factor = forward_vel.dot(forward_dir)
+	
 	if abs(speed_factor) > 0.85:
-		var steer_rad = stearig_angle * -turn
+		var steer_direction = 1.0 if speed_factor < 0.0 else -1.0
+		var steer_radian = stearig_angle * steer_direction * turn
 		
 		# Delay de giro, emula el tiempo que se tarda en girar y da precicion.
 		if turn != 0.0:
-			#if last_turn_direction == turn_direction:
-				#turn_curve += delta 
-				#turn_curve = min(turn_curve, 1.0)
-			#else:
-				#turn_curve = 0.0
-			turn_curve += delta * 1.25
-			turn_curve = min(turn_curve, 500.0)
+			turn_curve += delta
+			turn_curve = min(turn_curve, 1.0)
 		else:
-			turn_curve = lerp(turn_curve, 0.0, delta)
+			turn_curve = lerp(turn_curve, 0.0, delta )
 		
-		steer_rad *= ease(turn_curve, 0.2)
-		rotate_y(steer_rad  * delta )
+		steer_radian *= ease(turn_curve, 0.2)
+		rotate_y(steer_radian * delta)
 	
 	if Input.is_key_pressed(KEY_ESCAPE):
 		velocity = Vector3.ZERO
 		
 		pass
-		
+	
+	var cur_vel = velocity.length()
 	move_and_slide()
 	
-	if is_on_wall() and not is_hurt:
+	if is_on_wall() and !is_hurt and cur_vel > 5.0:
 		hurt()
+	
 	if is_hurt:
 		timer -= delta
 		if timer <= 0.0:

@@ -1,12 +1,15 @@
 [gd_scene format=4 uid="uid://dpj21kq58v6t0"]
 
-[ext_resource type="Script" uid="uid://brt17kevvin0u" path="res://Logica/overlord.gd" id="1_2ia52"]
-[ext_resource type="PackedScene" uid="uid://dsvxbom5mckqf" path="res://Escenas/micro_characer.tscn" id="2_2ia52"]
-[ext_resource type="Texture2D" uid="uid://boo6duhfgb23q" path="res://Arte/SCREEN_320x180.png" id="3_s2ilj"]
-[ext_resource type="Texture2D" uid="uid://dnlsbl7x25j1e" path="res://Arte/flecha.png" id="4_ktoa8"]
-[ext_resource type="Script" uid="uid://jssd0dfk8ovh" path="res://Logica/live_bar.gd" id="5_1md0r"]
-[ext_resource type="PackedScene" uid="uid://gwc71hdrnl3h" path="res://Escenas/tiles_test.tscn" id="6_crgrh"]
-[ext_resource type="Script" uid="uid://cd18retof0x" path="res://Logica/tile_builder.gd" id="6_s2ilj"]
+[ext_resource type="Script" uid="uid://brt17kevvin0u" path="res://Logica/overlord.gd" id="1_txsr1"]
+[ext_resource type="PackedScene" uid="uid://dsvxbom5mckqf" path="res://Escenas/micro_characer.tscn" id="2_3p3u8"]
+[ext_resource type="Texture2D" uid="uid://boo6duhfgb23q" path="res://Arte/SCREEN_320x180.png" id="3_vxv2e"]
+[ext_resource type="Texture2D" uid="uid://gxt3t2o11rw4" path="res://Arte/chunk4.png" id="4_62vug"]
+[ext_resource type="Texture2D" uid="uid://00gefchl7aku" path="res://Arte/chunk_mkds.png" id="5_pnmo0"]
+[ext_resource type="Texture2D" uid="uid://dmotdarqyseyv" path="res://Arte/chunk1.png" id="6_u5qel"]
+[ext_resource type="Texture2D" uid="uid://dnlsbl7x25j1e" path="res://Arte/flecha.png" id="7_btx5o"]
+[ext_resource type="Script" uid="uid://jssd0dfk8ovh" path="res://Logica/live_bar.gd" id="8_7rj5s"]
+[ext_resource type="Script" uid="uid://cd18retof0x" path="res://Logica/tile_builder.gd" id="9_47cx6"]
+[ext_resource type="PackedScene" uid="uid://gwc71hdrnl3h" path="res://Escenas/tiles_test.tscn" id="10_e158d"]
 
 [sub_resource type="PrismMesh" id="PrismMesh_0xm2m"]
 size = Vector3(6, 1, 9)
@@ -20,13 +23,36 @@ subdivide_width = 6
 subdivide_depth = 6
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h2yge"]
-albedo_texture = ExtResource("3_s2ilj")
+albedo_texture = ExtResource("3_vxv2e")
 uv1_scale = Vector3(0.5, 0.5, 0.5)
 uv1_world_triplanar = true
 texture_filter = 0
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_0xm2m"]
 data = PackedVector3Array(32.5, 0, 32.5, 23.2143, 0, 32.5, 32.5, 0, 23.2143, 23.2143, 0, 32.5, 23.2143, 0, 23.2143, 32.5, 0, 23.2143, 23.2143, 0, 32.5, 13.928599, 0, 32.5, 23.2143, 0, 23.2143, 13.928599, 0, 32.5, 13.928599, 0, 23.2143, 23.2143, 0, 23.2143, 13.928599, 0, 32.5, 4.6429, 0, 32.5, 13.928599, 0, 23.2143, 4.6429, 0, 32.5, 4.6429, 0, 23.2143, 13.928599, 0, 23.2143, 4.6429, 0, 32.5, -4.6429, 0, 32.5, 4.6429, 0, 23.2143, -4.6429, 0, 32.5, -4.6429, 0, 23.2143, 4.6429, 0, 23.2143, -4.6429, 0, 32.5, -13.928599, 0, 32.5, -4.6429, 0, 23.2143, -13.928599, 0, 32.5, -13.928599, 0, 23.2143, -4.6429, 0, 23.2143, -13.928599, 0, 32.5, -23.2143, 0, 32.5, -13.928599, 0, 23.2143, -23.2143, 0, 32.5, -23.2143, 0, 23.2143, -13.928599, 0, 23.2143, -23.2143, 0, 32.5, -32.5, 0, 32.5, -23.2143, 0, 23.2143, -32.5, 0, 32.5, -32.5, 0, 23.2143, -23.2143, 0, 23.2143, 32.5, 0, 23.2143, 23.2143, 0, 23.2143, 32.5, 0, 13.928599, 23.2143, 0, 23.2143, 23.2143, 0, 13.928599, 32.5, 0, 13.928599, 23.2143, 0, 23.2143, 13.928599, 0, 23.2143, 23.2143, 0, 13.928599, 13.928599, 0, 23.2143, 13.928599, 0, 13.928599, 23.2143, 0, 13.928599, 13.928599, 0, 23.2143, 4.6429, 0, 23.2143, 13.928599, 0, 13.928599, 4.6429, 0, 23.2143, 4.6429, 0, 13.928599, 13.928599, 0, 13.928599, 4.6429, 0, 23.2143, -4.6429, 0, 23.2143, 4.6429, 0, 13.928599, -4.6429, 0, 23.2143, -4.6429, 0, 13.928599, 4.6429, 0, 13.928599, -4.6429, 0, 23.2143, -13.928599, 0, 23.2143, -4.6429, 0, 13.928599, -13.928599, 0, 23.2143, -13.928599, 0, 13.928599, -4.6429, 0, 13.928599, -13.928599, 0, 23.2143, -23.2143, 0, 23.2143, -13.928599, 0, 13.928599, -23.2143, 0, 23.2143, -23.2143, 0, 13.928599, -13.928599, 0, 13.928599, -23.2143, 0, 23.2143, -32.5, 0, 23.2143, -23.2143, 0, 13.928599, -32.5, 0, 23.2143, -32.5, 0, 13.928599, -23.2143, 0, 13.928599, 32.5, 0, 13.928599, 23.2143, 0, 13.928599, 32.5, 0, 4.6429, 23.2143, 0, 13.928599, 23.2143, 0, 4.6429, 32.5, 0, 4.6429, 23.2143, 0, 13.928599, 13.928599, 0, 13.928599, 23.2143, 0, 4.6429, 13.928599, 0, 13.928599, 13.928599, 0, 4.6429, 23.2143, 0, 4.6429, 13.928599, 0, 13.928599, 4.6429, 0, 13.928599, 13.928599, 0, 4.6429, 4.6429, 0, 13.928599, 4.6429, 0, 4.6429, 13.928599, 0, 4.6429, 4.6429, 0, 13.928599, -4.6429, 0, 13.928599, 4.6429, 0, 4.6429, -4.6429, 0, 13.928599, -4.6429, 0, 4.6429, 4.6429, 0, 4.6429, -4.6429, 0, 13.928599, -13.928599, 0, 13.928599, -4.6429, 0, 4.6429, -13.928599, 0, 13.928599, -13.928599, 0, 4.6429, -4.6429, 0, 4.6429, -13.928599, 0, 13.928599, -23.2143, 0, 13.928599, -13.928599, 0, 4.6429, -23.2143, 0, 13.928599, -23.2143, 0, 4.6429, -13.928599, 0, 4.6429, -23.2143, 0, 13.928599, -32.5, 0, 13.928599, -23.2143, 0, 4.6429, -32.5, 0, 13.928599, -32.5, 0, 4.6429, -23.2143, 0, 4.6429, 32.5, 0, 4.6429, 23.2143, 0, 4.6429, 32.5, 0, -4.6429, 23.2143, 0, 4.6429, 23.2143, 0, -4.6429, 32.5, 0, -4.6429, 23.2143, 0, 4.6429, 13.928599, 0, 4.6429, 23.2143, 0, -4.6429, 13.928599, 0, 4.6429, 13.928599, 0, -4.6429, 23.2143, 0, -4.6429, 13.928599, 0, 4.6429, 4.6429, 0, 4.6429, 13.928599, 0, -4.6429, 4.6429, 0, 4.6429, 4.6429, 0, -4.6429, 13.928599, 0, -4.6429, 4.6429, 0, 4.6429, -4.6429, 0, 4.6429, 4.6429, 0, -4.6429, -4.6429, 0, 4.6429, -4.6429, 0, -4.6429, 4.6429, 0, -4.6429, -4.6429, 0, 4.6429, -13.928599, 0, 4.6429, -4.6429, 0, -4.6429, -13.928599, 0, 4.6429, -13.928599, 0, -4.6429, -4.6429, 0, -4.6429, -13.928599, 0, 4.6429, -23.2143, 0, 4.6429, -13.928599, 0, -4.6429, -23.2143, 0, 4.6429, -23.2143, 0, -4.6429, -13.928599, 0, -4.6429, -23.2143, 0, 4.6429, -32.5, 0, 4.6429, -23.2143, 0, -4.6429, -32.5, 0, 4.6429, -32.5, 0, -4.6429, -23.2143, 0, -4.6429, 32.5, 0, -4.6429, 23.2143, 0, -4.6429, 32.5, 0, -13.928599, 23.2143, 0, -4.6429, 23.2143, 0, -13.928599, 32.5, 0, -13.928599, 23.2143, 0, -4.6429, 13.928599, 0, -4.6429, 23.2143, 0, -13.928599, 13.928599, 0, -4.6429, 13.928599, 0, -13.928599, 23.2143, 0, -13.928599, 13.928599, 0, -4.6429, 4.6429, 0, -4.6429, 13.928599, 0, -13.928599, 4.6429, 0, -4.6429, 4.6429, 0, -13.928599, 13.928599, 0, -13.928599, 4.6429, 0, -4.6429, -4.6429, 0, -4.6429, 4.6429, 0, -13.928599, -4.6429, 0, -4.6429, -4.6429, 0, -13.928599, 4.6429, 0, -13.928599, -4.6429, 0, -4.6429, -13.928599, 0, -4.6429, -4.6429, 0, -13.928599, -13.928599, 0, -4.6429, -13.928599, 0, -13.928599, -4.6429, 0, -13.928599, -13.928599, 0, -4.6429, -23.2143, 0, -4.6429, -13.928599, 0, -13.928599, -23.2143, 0, -4.6429, -23.2143, 0, -13.928599, -13.928599, 0, -13.928599, -23.2143, 0, -4.6429, -32.5, 0, -4.6429, -23.2143, 0, -13.928599, -32.5, 0, -4.6429, -32.5, 0, -13.928599, -23.2143, 0, -13.928599, 32.5, 0, -13.928599, 23.2143, 0, -13.928599, 32.5, 0, -23.2143, 23.2143, 0, -13.928599, 23.2143, 0, -23.2143, 32.5, 0, -23.2143, 23.2143, 0, -13.928599, 13.928599, 0, -13.928599, 23.2143, 0, -23.2143, 13.928599, 0, -13.928599, 13.928599, 0, -23.2143, 23.2143, 0, -23.2143, 13.928599, 0, -13.928599, 4.6429, 0, -13.928599, 13.928599, 0, -23.2143, 4.6429, 0, -13.928599, 4.6429, 0, -23.2143, 13.928599, 0, -23.2143, 4.6429, 0, -13.928599, -4.6429, 0, -13.928599, 4.6429, 0, -23.2143, -4.6429, 0, -13.928599, -4.6429, 0, -23.2143, 4.6429, 0, -23.2143, -4.6429, 0, -13.928599, -13.928599, 0, -13.928599, -4.6429, 0, -23.2143, -13.928599, 0, -13.928599, -13.928599, 0, -23.2143, -4.6429, 0, -23.2143, -13.928599, 0, -13.928599, -23.2143, 0, -13.928599, -13.928599, 0, -23.2143, -23.2143, 0, -13.928599, -23.2143, 0, -23.2143, -13.928599, 0, -23.2143, -23.2143, 0, -13.928599, -32.5, 0, -13.928599, -23.2143, 0, -23.2143, -32.5, 0, -13.928599, -32.5, 0, -23.2143, -23.2143, 0, -23.2143, 32.5, 0, -23.2143, 23.2143, 0, -23.2143, 32.5, 0, -32.5, 23.2143, 0, -23.2143, 23.2143, 0, -32.5, 32.5, 0, -32.5, 23.2143, 0, -23.2143, 13.928599, 0, -23.2143, 23.2143, 0, -32.5, 13.928599, 0, -23.2143, 13.928599, 0, -32.5, 23.2143, 0, -32.5, 13.928599, 0, -23.2143, 4.6429, 0, -23.2143, 13.928599, 0, -32.5, 4.6429, 0, -23.2143, 4.6429, 0, -32.5, 13.928599, 0, -32.5, 4.6429, 0, -23.2143, -4.6429, 0, -23.2143, 4.6429, 0, -32.5, -4.6429, 0, -23.2143, -4.6429, 0, -32.5, 4.6429, 0, -32.5, -4.6429, 0, -23.2143, -13.928599, 0, -23.2143, -4.6429, 0, -32.5, -13.928599, 0, -23.2143, -13.928599, 0, -32.5, -4.6429, 0, -32.5, -13.928599, 0, -23.2143, -23.2143, 0, -23.2143, -13.928599, 0, -32.5, -23.2143, 0, -23.2143, -23.2143, 0, -32.5, -13.928599, 0, -32.5, -23.2143, 0, -23.2143, -32.5, 0, -23.2143, -23.2143, 0, -32.5, -32.5, 0, -23.2143, -32.5, 0, -32.5, -23.2143, 0, -32.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ult7v"]
+albedo_texture = ExtResource("4_62vug")
+
+[sub_resource type="QuadMesh" id="QuadMesh_xqbf5"]
+material = SubResource("StandardMaterial3D_ult7v")
+size = Vector2(200, 200)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l8mww"]
+albedo_texture = ExtResource("5_pnmo0")
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_xqbf5"]
+material = SubResource("StandardMaterial3D_l8mww")
+size = Vector2(200, 200)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_quecf"]
+albedo_texture = ExtResource("6_u5qel")
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ult7v"]
+material = SubResource("StandardMaterial3D_quecf")
+size = Vector2(420, 420)
 
 [sub_resource type="BoxMesh" id="BoxMesh_lquwl"]
 size = Vector3(8, 7, 10)
@@ -46,9 +72,9 @@ grow_begin = 2.0
 thickness = 20
 
 [node name="main" type="Node3D" unique_id=648834526]
-script = ExtResource("1_2ia52")
+script = ExtResource("1_txsr1")
 
-[node name="Micro_characer" parent="." unique_id=540502499 instance=ExtResource("2_2ia52")]
+[node name="Micro_characer" parent="." unique_id=540502499 instance=ExtResource("2_3p3u8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.104275, 0.74925613, -4.1351113)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1513205522]
@@ -169,6 +195,20 @@ metadata/_edit_group_ = true
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Terreno/suelo9/StaticBody3D" unique_id=137547950]
 shape = SubResource("ConcavePolygonShape3D_0xm2m")
 
+[node name="Tapetes" type="Node3D" parent="." unique_id=1998769187]
+
+[node name="t1" type="MeshInstance3D" parent="Tapetes" unique_id=1915151227]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 40.40869, 0, -47.500404)
+mesh = SubResource("QuadMesh_xqbf5")
+
+[node name="yoshi" type="MeshInstance3D" parent="Tapetes" unique_id=795781594]
+visible = false
+mesh = SubResource("PlaneMesh_xqbf5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Tapetes" unique_id=1846695358]
+visible = false
+mesh = SubResource("PlaneMesh_ult7v")
+
 [node name="Edificios" type="Node3D" parent="." unique_id=1547952820]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -203, 0, 0)
 
@@ -223,7 +263,7 @@ loop = false
 [node name="Decal" type="Decal" parent="Ruta/PathFroward" unique_id=1879056256]
 transform = Transform3D(0.99921703, 0, -0.03956643, 0, 1, 0, 0.03956643, 0, 0.99921703, -0.21682906, 0.0110087395, 1.8314981)
 size = Vector3(5.0918884, 8.193237, 6.078125)
-texture_albedo = ExtResource("4_ktoa8")
+texture_albedo = ExtResource("7_btx5o")
 distance_fade_enabled = true
 distance_fade_begin = 20.0
 distance_fade_length = 5.0
@@ -236,7 +276,7 @@ loop = false
 [node name="Decal" type="Decal" parent="Ruta/PathBackward" unique_id=1379013817]
 transform = Transform3D(0.99921703, 0, -0.03956643, 0, 1, 0, 0.03956643, 0, 0.99921703, -0.21682906, 0.0110087395, 1.8314981)
 size = Vector3(5.0918884, 8.193237, 6.078125)
-texture_albedo = ExtResource("4_ktoa8")
+texture_albedo = ExtResource("7_btx5o")
 distance_fade_enabled = true
 distance_fade_begin = 20.0
 distance_fade_length = 5.0
@@ -258,7 +298,7 @@ offset_bottom = -22.0
 grow_horizontal = 0
 grow_vertical = 0
 show_percentage = false
-script = ExtResource("5_1md0r")
+script = ExtResource("8_7rj5s")
 hp_blocs = 8
 
 [node name="VSeparator" type="VSeparator" parent="CanvasLayer/LiveBar" unique_id=208214671]
@@ -270,7 +310,7 @@ grow_vertical = 2
 theme_override_styles/separator = SubResource("StyleBoxLine_lquwl")
 
 [node name="Tile_builder" type="Node3D" parent="." unique_id=600740115]
-script = ExtResource("6_s2ilj")
+script = ExtResource("9_47cx6")
 
-[node name="tiles_test" parent="Tile_builder" unique_id=1274433896 instance=ExtResource("6_crgrh")]
+[node name="tiles_test" parent="Tile_builder" unique_id=1274433896 instance=ExtResource("10_e158d")]
 tile_map_data = PackedByteArray("AAAAAPX/AQAAAAAAAAAAAPb/AQAAAAAAAAAAAPf/AQAAAAAAAAAAAPj/AQAAAAAAAAAAAPn/AQAAAAAAAAAAAPr/AQAAAAAAAAAAAPT/AQAAAAAAAAAAAPv/AQAAAAAAAAAAAPP/AQAAAAAAAAAAAPL/AQAAAAAAAAAAAPH/AQAAAAAAAAAAAPD/AQAAAAAAAAAAAO//AQAAAAAAAAAAAO7/AQAAAAAAAAAAAO3/AQAAAAAAAAAAAOz/AQAAAAAAAAAAAOv/AQAAAAAAAAAAAOr/AQAAAAAAAAABAOr/AAABAAAAAAABAOn/AAABAAAAAAACAOn/AAABAAAAAAACAOr/AAABAAAAAAADAOr/AAABAAAAAAAAAOn/AAAFAAAAAAADAOv/AAABAAAAAAACAOv/AAABAAAAAAABAOv/AAABAAAAAAAAAP//AAAAAAAAAAAAAP7/AQAAAAAAAAAAAP3/AQAAAAAAAAAAAPz/AQAAAAAAAAA=")

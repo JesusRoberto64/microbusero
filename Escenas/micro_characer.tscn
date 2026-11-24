@@ -2,14 +2,13 @@
 
 [ext_resource type="Script" uid="uid://5jk7q61qaqt1" path="res://Logica/vehicle_characer.gd" id="1_5xfmy"]
 [ext_resource type="Script" uid="uid://tfs1u8qn6jj6" path="res://Logica/ancher_camera.gd" id="2_q6o7v"]
-[ext_resource type="Script" uid="uid://idnpthf5ixok" path="res://Logica/follow_camera.gd" id="3_0ahhu"]
 [ext_resource type="Script" uid="uid://jssd0dfk8ovh" path="res://Logica/live_bar.gd" id="4_1jpkv"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_ig7tw"]
-size = Vector3(1, 1, 2)
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_0xm2m"]
-size = Vector3(1, 1, 1.975647)
+size = Vector3(1, 1, 3.0036163)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ig7tw"]
+size = Vector3(1, 1, 3)
 
 [sub_resource type="Animation" id="Animation_lquwl"]
 length = 0.001
@@ -58,31 +57,25 @@ rotation_edit_mode = 2
 script = ExtResource("1_5xfmy")
 metadata/_edit_group_ = true
 
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2114973014]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0025558472)
+shape = SubResource("BoxShape3D_0xm2m")
+
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=34716210]
 layers = 2
 mesh = SubResource("BoxMesh_ig7tw")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2114973014]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.007232666)
-shape = SubResource("BoxShape3D_0xm2m")
 
 [node name="Ancher_camera" type="Node" parent="." unique_id=638767464 node_paths=PackedStringArray("ancher_point")]
 script = ExtResource("2_q6o7v")
 ancher_point = NodePath("../ancher_point")
 
 [node name="Camera3D" type="Camera3D" parent="Ancher_camera" unique_id=1957736999]
-transform = Transform3D(1, 0, 0, 0, 0.7506649, 0.6606832, 0, -0.6606832, 0.7506649, 0, 2.515326, 3.7870889)
+transform = Transform3D(1, 0, 0, 0, 0.9064518, 0.42230925, 0, -0.42230925, 0.9064518, 0, 6.6053634, 12.042511)
 current = true
-
-[node name="follow_camera" type="Camera3D" parent="." unique_id=1175851137 node_paths=PackedStringArray("ancher_point", "limit_cam")]
-transform = Transform3D(1, -2.2633564e-09, -1.842266e-09, 2.9167166e-09, 0.7540565, 0.6568095, -9.742119e-11, -0.6568095, 0.7540565, -2.7271319e-10, 2.6176941, 3.5412905)
-rotation_edit_mode = 2
-script = ExtResource("3_0ahhu")
-ancher_point = NodePath("../ancher_point")
-limit_cam = NodePath("../Limit_cam")
+fov = 35.0
 
 [node name="ancher_point" type="Marker3D" parent="." unique_id=1201160520]
-transform = Transform3D(1, 0, 0, 0, 0.75066483, 0.6606832, 0, -0.6606832, 0.75066483, 0, 2.233015, 3.4663286)
+transform = Transform3D(1, 0, 0, 0, 0.7261289, 0.6875586, 0, -0.6875586, 0.7261289, 0, 12.641489, 12.135032)
 
 [node name="Limit_cam" type="Marker3D" parent="." unique_id=898065450]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5158587, 3.7860882)
